@@ -33,24 +33,17 @@ export default function UserMenu() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 hover:bg-indigo-200 transition-colors"
       >
-        <User className="w-5 h-5 text-gray-600" />
+        <User className="w-5 h-5 text-indigo-600" />
       </button>
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1">
-            <button
-              onClick={() => {
-                setIsOpen(false)
-                // Add settings page navigation here
-              }}
-              className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-            >
-              <Settings className="w-4 h-4 mr-2" />
-              Ustawienia
-            </button>
+            <div className="px-4 py-2 text-sm text-gray-700 border-b">
+              Zalogowany jako: {user?.email}
+            </div>
             <button
               onClick={handleSignOut}
               className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
