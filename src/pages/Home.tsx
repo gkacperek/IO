@@ -57,7 +57,7 @@ function Home() {
           *,
           subjects (name),
           professors (name),
-          user_profiles!notes_user_id_fkey (username)
+          user_profiles (username)
         `)
         .order('created_at', { ascending: false })
 
